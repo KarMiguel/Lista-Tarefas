@@ -25,14 +25,18 @@ header  {
 }
 
 input{
+    margin-top: 5%;
     height: 120px;
     font-size: 2rem;
-    width: 80%;
+    width: 70%;
     padding-left: 10%;
+    font-size:20px;
+    outline: none;
 }
 
 button.add{
-    width: 20%;
+    margin-top: 5%;
+    width: 30%;
     cursor: pointer;
     background: green;
     color: white;
@@ -41,6 +45,7 @@ button.add{
     height: 120px;
     border-top-right-radius:10px ;
     border-bottom-right-radius:10px ;
+    border: 1px solid black;
 
 }
 
@@ -72,6 +77,9 @@ main{
     flex: 55%;
     font-size: 20px;
     font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
 }
 .item-botao{ 
     flex: 25%;
