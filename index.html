@@ -5,19 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23047857'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>">
     <link rel="stylesheet" href="CSS/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Tarefas</h1>
+    <div class="bg-pattern"></div>
+    <div id="toast" class="toast" aria-live="polite" aria-hidden="true"></div>
+    <div class="app">
+        <header class="cabecalho">
+            <div class="cabecalho-badge" title="Lista de Tarefas">
+                <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h1>Lista de Tarefas</h1>
+            <p class="subtitulo"><i class="fa-solid fa-cloud-arrow-down"></i> Suas tarefas são salvas automaticamente</p>
+            <div class="cinco-icones" aria-hidden="true">
+                <span title="Lista"><i class="fa-solid fa-list-check"></i></span>
+                <span title="Adicionar"><i class="fa-solid fa-plus"></i></span>
+                <span title="Concluir"><i class="fa-regular fa-circle-check"></i></span>
+                <span title="Deletar"><i class="fa-solid fa-trash"></i></span>
+                <span title="Salvo"><i class="fa-solid fa-floppy-disk"></i></span>
+            </div>
+        </header>
 
-    <header>
-        <input id="inputTarefa" type="text" placeholder=" Digite sua Tarefa ...">
-        <button id="enter" onclick="addTarefa()" class="add">Adicionar</button>
-    </header>
-    <main id="areaLista">
-        
-    </main>
+        <section class="entrada">
+            <span class="entrada-icone"><i class="fa-solid fa-pen-to-square"></i></span>
+            <input id="inputTarefa" type="text" placeholder="O que você precisa fazer?" autocomplete="off" maxlength="200">
+            <button id="enter" type="button" onclick="addTarefa()" class="btn-add">
+                <i class="fa-solid fa-plus"></i>
+                <span class="btn-text">Adicionar</span>
+            </button>
+        </section>
+
+        <main id="areaLista" class="lista" aria-label="Lista de tarefas">
+            <!-- Tarefas carregadas pelo JavaScript -->
+        </main>
+
+        <footer class="rodape">
+            <span class="dica">
+                <i class="fa-regular fa-hand-pointer"></i>
+                Clique na tarefa para marcar como concluída
+            </span>
+        </footer>
+    </div>
 
     <script src="controleTarefa.js"></script>
 </body>
